@@ -5,7 +5,7 @@ export function ContactPreview({ contact, onRemoveContact }) {
  
   return (
     <section className="contact-preview flex column" style={{backgroundImage: `url(${contact.imgUrl}${contact._id}?set=set5)`}}>
-      <Link to={`/contact/${contact._id}`} className="flex space-between column">
+      <Link to={`/contact/${contact._id}`} className="flex column">
         <h4>{contact.name}</h4>
       </Link>
       <section className="actions">

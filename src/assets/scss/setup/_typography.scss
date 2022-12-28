@@ -66,6 +66,12 @@
         font-size: rem(14px);
         content: "\f0c8";
     }
+    &.email-icon::before {
+        content: "\f0e0";
+    }
+    &.phone-icon::before {
+        content: "\f2b9";
+    }
 }
 
 .fa-brands {
@@ -150,6 +156,9 @@
 
     &.act-icon::before {
         content: "\f550";
+    }
+    &.phone-icon::before {
+        content: "\f8d3";
     }
 
     & {

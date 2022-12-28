@@ -4,7 +4,7 @@ const STORAGE_KEY = 'user'
 export const userService = {
     getUser,
     signup,
-    addMove
+    addMove,
 }
 
 // const user = getUser()
@@ -34,8 +34,11 @@ function addMove(contact, amount) {
         at: Date.now(),
         amount
     }
-    const user = storageService.load(STORAGE_KEY)
+
+    let user = storageService.load(STORAGE_KEY)
     user.moves.push(move)
+    user.coins -= move.amount
     storageService.store(STORAGE_KEY, user)
+    return user
 
 }

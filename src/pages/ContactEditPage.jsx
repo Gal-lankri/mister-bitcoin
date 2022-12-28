@@ -44,8 +44,8 @@ export class ContactEditPage extends Component {
     const { name, email, phone } = contact
     return (
       <section className="contact-edit">
+        <form onSubmit={this.onAddContact} className="simple-form">
         <h1>{contact._id ? 'Edit' : 'Add'} Contact</h1>
-        <form onSubmit={this.onAddContact}>
                     <label htmlFor="name">Name</label>
                     <input onChange={this.handleChange} value={name} type="text" name="name" id="name" />
                     <label htmlFor="phone">Phone</label>
@@ -53,7 +53,7 @@ export class ContactEditPage extends Component {
                     <label htmlFor="email">Email</label>
                     <input onChange={this.handleChange} value={email} type="Email" name="email" id="email"/>
 
-                    <button>Add</button>
+                    <button>Save</button>
                 </form>
       </section>
     )

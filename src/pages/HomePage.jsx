@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { userService } from '../services/user.service'
 import { bitcoinService } from '../services/bitcoin.service'
+import MoveList from '../cmps/MoveList'
 export class HomePage extends Component {
   state = {
     user: null,
@@ -30,11 +31,15 @@ export class HomePage extends Component {
     const { user, bitcoinRate } = this.state
     console.log(bitcoinRate)
     if (!bitcoinRate) return <div>Loading...</div>
+    console.log(user, '!!!!!!!!!!!!!!!!!!!!!!!!!!');
     return (
       <section className='home-page flex column gap'>
         <h2>Hello {user.name} !</h2>
         <p>👛 Coins: {user.coins}</p>
         <p>💰 BTC: {bitcoinRate}</p>
+        <section>
+          <MoveList moves={user.moves}/>
+        </section>
       </section>
     )
   }
